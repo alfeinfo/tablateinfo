@@ -53,7 +53,7 @@ def home(request,nivel):
                     puntos+=25
                 elif request.user.nivel=="Dificil":
                     puntos+=50
-                elif request.user.nivel=="Chaqueñazo":
+                elif request.user.nivel=="BIEN_CHAQUEÑO":
                     puntos+=100
                 else:
                     puntos+=10
@@ -93,10 +93,10 @@ def home(request,nivel):
             request.user.nivel="Dificil"
             
         elif (request.user.nivel=="Dificil" and nivel==3 and porcentaje>=80):
-            request.user.nivel="Chaqueñazo"
+            request.user.nivel="BIEN_CHAQUEÑO"
             
-        elif (request.user.nivel=="Chaqueñazo" and nivel==4 and porcentaje==100):
-            request.user.nivel="DIOS"
+        elif (request.user.nivel=="BIEN_CHAQUEÑO" and nivel==4 and porcentaje==100):
+            request.user.nivel="EXELENTE"
             
         elif (request.user.nivel=="Facil" and porcentaje>=50):
             request.user.nivel="Medio"
@@ -134,7 +134,7 @@ def home(request,nivel):
         
         print("PREGUNTAS NO POST",preguntas)
         print("------------------------------------")
-        #preguntas=CuestionarioModel.objects.all()
+        preguntas=CuestionarioModel.objects.all()
         context = {
             'nivel':nivel,
             'preguntas':preguntas
