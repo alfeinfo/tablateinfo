@@ -25,7 +25,7 @@ def home(request,nivel):
         preguntas=preguntas[:25]
     elif (nivel== 3 and len(preguntas)> 50):
         preguntas=preguntas[:50]
-    #print("PREGUNTAS INICIO",preguntas)
+    print("PREGUNTAS INICIO",preguntas)
     print("------------------------------------")
 
  # Logica del juego    
@@ -34,7 +34,7 @@ def home(request,nivel):
         print('Nivel',nivel)
         aprueba=False
 
-        #print("PREGUNTAS POST",preguntas)
+        print("PREGUNTAS POST",preguntas)
         print("------------------------------------")
         ELIGIO=[]
 
@@ -45,7 +45,7 @@ def home(request,nivel):
         for p in preguntas:
             total+=1
             #pruebas----------------------------------
-            #print("que tiene preguntas", preguntas)
+            print("que tiene preguntas", preguntas)
             #fin  de pruebas----------------------------- 
 
             if (p.correct) ==  request.POST.get(p.pregunta):
